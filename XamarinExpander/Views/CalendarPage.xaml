@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="XamarinExpander.Views.CalendarPage"
+             Title="Calendario"
+             BackgroundColor="#241345">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center">
+                <Image Source="xamarindegradado"
+                   
+                   HeightRequest="150"
+                   WidthRequest="150" />
+                <Expander>
+                    <Expander.Header>
+                        <Label Text="Humberto Jaimes"
+                               TextColor="White"
+                               FontAttributes="Bold"
+                               FontSize="Medium" />
+                    </Expander.Header>
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="https://www.humbertojaimes.net/wp-content/uploads/2020/06/HumbertoJaimes-300x300.jpg"
+                               
+                               HeightRequest="120"
+                               WidthRequest="120" />
+                        <Label Grid.Column="1"
+                               TextColor="White"
+                               Text="Desarrollador de apps multiplataforma utilizando C#, especialmente trabajo en apps móviles con Xamarin, tecnología en la que actualmente estoy certificado y en la CDMX inicie una comunidad sobre Xamarin por la cual he sido reconocido como Xamarin y Microsoft MVP. También soy instructor sobre Xamarin de forma presencial y virtual."
+                               FontAttributes="Italic" />
+                        
+                    </Grid>
+                </Expander>
+            </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:FontAwesome="clr-namespace:XamarinExpander.Fonts;assembly=XamarinExpander"
+             xmlns:converters="clr-namespace:XamarinExpander.Converters" mc:Ignorable="d" x:Class="XamarinExpander.App">
+    <Application.Resources>
+                <ResourceDictionary>
+                    <!--ICONS-->
+                    <FontImageSource
+                x:Key="icon_open"
+                FontFamily="fontello"
+                Glyph="{x:Static FontAwesome:IconClass.icon_open}"
+                Size="20"
+                Color="#111111" />
+
+            <FontImageSource
+                x:Key="icon_checked"
+                FontFamily="fontello"
+                Glyph="{x:Static FontAwesome:IconClass.icon_checked}"
+                Size="15"
+                Color="#111111" />
+
+            <x:String x:Key="Github">&#xf113;</x:String>
+            <x:String x:Key="Wordpress">&#xf19a;</x:String>
+            <x:String x:Key="Twitter">&#xf309;</x:String>
+            <x:String x:Key="Blogger">&#xf314;</x:String>
+            <x:String x:Key="Youtube">&#xf315;</x:String>
+            <x:String x:Key="Linkedin">&#xf318;</x:String>
+        
+            <!-- COLORS -->
+            <Color x:Key="BarBackgroundColor">#190D38</Color>
+            <Color x:Key="TextColor">#FFFFFF</Color>
+            <Color x:Key="BackgroundColor">#241345</Color>
+            <Color x:Key="DetailTextColor">#9486B0</Color>
+
+            <!-- CONVERTERS -->
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

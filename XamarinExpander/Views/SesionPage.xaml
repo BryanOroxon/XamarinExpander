@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             BackgroundColor="Black"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:viewmodels="clr-namespace:XamarinExpander.ViewModels"
+             Visual="Material"
+             x:Class="XamarinExpander.Views.SesionPage">
+    <ContentPage.BindingContext>
+        <viewmodels:SpeakerListViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Ponentes"  TextColor="White" CharacterSpacing="3" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Title" Margin="0,20,0,10"  />
+                <StackLayout BindableLayout.ItemsSource="{Binding Path=Items}" Margin="0,5,0,10" >
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <pancake:PancakeView BackgroundGradientAngle="135"
+                                BackgroundGradientStartColor="{Binding StartColor}"
+                                BackgroundGradientEndColor="{Binding EndColor}" Margin="10,0,10,0" CornerRadius="30,0,0,30" BorderColor="Goldenrod" BorderThickness="2">
+                                <Expander>
+                                    <Expander.Header>
+                                        <Label HorizontalOptions="CenterAndExpand"  Margin="0,10,0,10"  >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <FormattedString.Spans>
+                                                        <Span Text="{Binding Speaker}" TextColor="White"  CharacterSpacing="3" FontAttributes="Bold"  FontSize="Medium" />
+                                                        <Span Text=" " />
+                                                        <Span Text="{Binding Titulo}" FontSize="13" TextColor="Black" FontAttributes="Bold" />
+                                                    </FormattedString.Spans>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </Expander.Header>
+                                    <Grid Padding="5" RowDefinitions="AUTO" ColumnDefinitions=".30*, .7*">  <!--Me gusta esta nueva funcionalidad de Xamarin Forms 4.7 -->
+                                        <pancake:PancakeView CornerRadius="50">
+                                            <Image Grid.Column="0" Grid.Row="0"
+                                                   HeightRequest="100" WidthRequest="100" Source="{Binding Imagen}"
+                                                   Aspect="AspectFill"  />
+                                         </pancake:PancakeView>
+
+
+                                        <!--Image Grid.Column="0" Grid.Row="0" HeightRequest="100" WidthRequest="100" Source="{Binding Imagen}" Aspect="AspectFill"  />
+                                            <Image.Clip>
+                                                <EllipseGeometry RadiusX="70"
+                                                                 RadiusY="70"
+                                                                 Center="60,60" />
+                                            </Image.Clip>
+                                        </Image-->
+                                        <pancake:PancakeView HorizontalOptions="Start" VerticalOptions="Start" CornerRadius="25" Padding="15"
+                                                                 Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" 
+                                                                 BackgroundGradientStartColor="#448AFF" 
+                                                                 BackgroundGradientEndColor="#4A148C" 
+                                                                 BackgroundGradientAngle="0" >
+                                                <Expander HorizontalOptions="Start" VerticalOptions="End">
+                                                    <Expander.Header>
+                                                        
+                                                        <Label Text="&#xe807;"  WidthRequest="18" HeightRequest="18" TextColor="White" FontFamily="fontello"  ></Label>
+                                                    </Expander.Header>
+                                                    <StackLayout Grid.Column="1" BindableLayout.ItemsSource="{Binding Items}" Spacing="0">
+                                                   
+                                                        <BindableLayout.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Grid ColumnSpacing="0">
+                                                                <Grid ColumnDefinitions="Auto,Auto">
+                                                                <Image
+                                                                    Grid.Column="0" HeightRequest="12" WidthRequest="12"
+                                                                    Source="{StaticResource icon_checked}"  />
+                                                                <Label
+                                                                    Grid.Column="1"
+                                                                    Text="{Binding Red}"
+                                                                    TextColor="White"
+                                                                    HorizontalTextAlignment="Start"
+                                                                    FontSize="12"/>
+                                                                </Grid>
+                                                            </Grid>
+                                                        </DataTemplate>
+                                                        </BindableLayout.ItemTemplate>
+                                                
+                                                </StackLayout>
+                                                </Expander>
+                                            </pancake:PancakeView>
+                                    </Grid>
+                                </Expander>
+                            </pancake:PancakeView>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

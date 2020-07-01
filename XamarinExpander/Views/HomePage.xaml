@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             Title="Xamarin Upgrade - Xamarin Edition"
+             Visual="Material"
+             x:Class="XamarinExpander.Views.HomePage">
+    <Grid Visual="Material">
+        <magic:GradientView VerticalOptions="FillAndExpand">
+            <magic:CssGradientSource>
+                <![CDATA[
+                    linear-gradient(135deg, rgb(15, 35, 134) 0%, rgb(15, 35, 134) 15%,rgb(19, 67, 156) 15%, rgb(19, 67, 156) 47%,rgb(23, 99, 178) 47%, rgb(23, 99, 178) 76%,rgb(26, 130, 200) 76%, rgb(26, 130, 200) 92%,rgb(30, 162, 222) 92%, rgb(30, 162, 222) 100%)
+                ]]>
+            </magic:CssGradientSource>
+        </magic:GradientView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".15*" />
+                <RowDefinition Height=".7*" />
+                <RowDefinition Height=".15*" />
+
+            </Grid.RowDefinitions>
+            <Image Source="xamarin_avatar.png" HorizontalOptions="CenterAndExpand" HeightRequest="100" WidthRequest="100" />
+            <Frame
+                Grid.Row="1"
+                Margin="15,5,15,5"
+                BackgroundColor="Black"
+                Opacity=".6"
+                BorderColor="OrangeRed"
+                HasShadow="True"
+                CornerRadius="20">
+
+                <StackLayout VerticalOptions="Center">
+                    <Button
+                        CornerRadius="20"
+                        BackgroundColor="#FA6217"
+                        BorderColor="red"
+                        TextColor="White"
+                        Text="Humberto Jaimes"
+                        Clicked="Button_Calendar" />
+                    <Button
+                        CornerRadius="20"
+                        BackgroundColor="#FA6217"
+                        BorderColor="red"
+                        TextColor="White"
+                        Text="Agenda"
+                        Clicked="Button_DayList" />
+                    <Button
+                        CornerRadius="20"
+                        BackgroundColor="#FA6217"
+                        BorderColor="red"
+                        TextColor="White"
+                        Text="Sesiones"
+                        Clicked="Button_Sesion" />
+                     <Button
+                        CornerRadius="20"
+                        BackgroundColor="#FA6217"
+                        BorderColor="red"
+                        TextColor="White"
+                        Text="Sesiones Versión 2"
+                        Clicked="Button_NewSesion" />
+                    <Button
+                        CornerRadius="20"
+                        BackgroundColor="#FA6217"
+                        BorderColor="red"
+                        TextColor="White"
+                        Text="Acerca de"
+                        Clicked="Button_About" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>

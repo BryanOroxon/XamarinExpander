@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinExpander.Views.NewSesionPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:viewmodels="clr-namespace:XamarinExpander.ViewModels"
+    Visual="Material"
+    mc:Ignorable="d"
+    Title="Renovado ExpanderView">
+
+    <ContentPage.BindingContext>
+        <viewmodels:SpeakerListViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <yummy:PancakeView
+            IsClippedToBounds="true"
+            HorizontalOptions="FillAndExpand"
+            BackgroundGradientAngle="10"
+            BackgroundGradientStartColor="#111D5B"
+            BackgroundGradientEndColor="#030612">
+            <ScrollView>
+
+                <StackLayout
+                    Padding="16,26,16,10"
+                    BindableLayout.ItemsSource="{Binding Items}"
+                    Spacing="15">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <yummy:PancakeView
+                                CornerRadius="2,18,18,2"
+                                IsClippedToBounds="true"
+                                HorizontalOptions="FillAndExpand"
+                                BackgroundGradientAngle="135"
+                                BackgroundGradientStartColor="{Binding StartColor}"
+                                BackgroundGradientEndColor="{Binding EndColor}">
+                                <Expander Padding="15">
+                                    <Expander.Header>
+                                        <StackLayout Spacing="0">
+                                            <Label
+                                                Text="{Binding Speaker}"
+                                                FontSize="20"
+                                                FontAttributes="Bold"
+                                                LineBreakMode="TailTruncation"
+                                                TextColor="#FFEDFF" />
+                                            <Label
+                                                Text="{Binding Titulo}"
+                                                FontSize="18"
+                                                FontAttributes="Bold"
+                                                LineBreakMode="TailTruncation"
+                                                TextColor="#FFEDFF"
+                                                Opacity=".7" />
+                                        </StackLayout>
+                                    </Expander.Header>
+                                    <Grid
+                                        Padding="0,8,0,16"
+                                        ColumnSpacing="15"
+                                        ColumnDefinitions="Auto, *"
+                                        RowDefinitions="Auto, Auto">
+                                        <Frame
+                                            Grid.RowSpan="2"
+                                            Grid.Column="0"
+                                            Padding="0"
+                                            CornerRadius="37.5">
+                                            <Image
+                                                Source="{Binding Imagen}"
+                                                HeightRequest="75"
+                                                WidthRequest="75"
+                                                Aspect="AspectFill" />
+                                        </Frame>
+                                        <yummy:PancakeView
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            CornerRadius="10"
+                                            BackgroundColor="White"
+                                            Opacity=".4">
+
+                                            <Expander>
+                                                <Expander.Header>
+                                                    <Image
+                                                        Source="{StaticResource icon_open}"
+                                                        HorizontalOptions="FillAndExpand" />
+                                                </Expander.Header>
+
+                                                <StackLayout
+                                                    Padding="12,5"
+                                                    BindableLayout.ItemsSource="{Binding Items}">
+
+                                                    <BindableLayout.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Grid ColumnDefinitions="Auto,Auto">
+                                                                <Image
+                                                                    Grid.Column="0"
+                                                                    Source="{StaticResource icon_checked}" />
+                                                                <Label
+                                                                    Grid.Column="1"
+                                                                    Text="{Binding Red}"
+                                                                    HorizontalTextAlignment="Start"
+                                                                    FontSize="12"
+                                                                    TextColor="#131313" />
+                                                            </Grid>
+                                                        </DataTemplate>
+                                                    </BindableLayout.ItemTemplate>
+                                                </StackLayout>
+
+                                            </Expander>
+                                        </yummy:PancakeView>
+                                    </Grid>
+                                </Expander>
+                            </yummy:PancakeView>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+        </yummy:PancakeView>
+    </ContentPage.Content>
+
+</ContentPage>
