@@ -12,7 +12,6 @@ namespace XamarinExpander
             InitializeComponent();
             Device.SetFlags(new[] { "Expander_Experimental" });
             MainPage = new NavigationPage (new HomePage());
-           // MainPage = new CustomNavigationPage(new DayListView());
         }
 
         protected override void OnStart()

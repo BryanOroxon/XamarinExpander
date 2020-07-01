@@ -54,7 +54,7 @@ namespace XamarinExpander.Services
                     {
                         new DayDetailItem { Name = "ExpanderView en Xamarin.Forms", Speaker= "Bryan  Oroxón", Hour="8:00PM", IsLatest = true },
 
-                    } },              /*  LimeGreen,MediumSeaGreen Orchid MediumVioletRed MediumSpringGreen NavajoWhite Mocasin MediumSlateBlue LawnGreen, MediumTurquoise MediumPurple LawnGreen, Fuschia  MediumOrchid HotPink     Khaki  Lime Magenta MediumAquamarine      */
+                    } },           
             };
         }
     }
