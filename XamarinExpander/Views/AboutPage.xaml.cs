@@ -21,7 +21,7 @@ namespace XamarinExpander.Views
         private async void Button_Web(object sender, EventArgs e)
         {
 
-            Browser.OpenAsync("https://xamarininteligente.com", BrowserLaunchMode.SystemPreferred );
+           await Browser.OpenAsync("https://xamarininteligente.com", BrowserLaunchMode.SystemPreferred );
         }
     }
 }
