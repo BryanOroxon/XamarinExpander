@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\XamarinExpander",
+    "\\XamarinExpander.iOS",
+    "\\XamarinExpander\\Models",
+    "\\XamarinExpander\\Services",
+    "\\XamarinExpander\\ViewModels",
+    "\\XamarinExpander\\Views"
   ],
+  "SelectedNode": "\\XamarinExpander\\Views\\SesionPage.xaml",
   "PreviewInSolutionExplorer": false
 }

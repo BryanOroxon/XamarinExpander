@@ -17,5 +17,10 @@ namespace XamarinExpander.Views
                 $"{AppInfo.BuildString}";
 
         }
+
+        private void Button_Web(object sender, EventArgs e)
+        {
+            Browser.OpenAsync("https://xamarininteligente.com", BrowserLaunchMode.SystemPreferred );
+        }
     }
 }

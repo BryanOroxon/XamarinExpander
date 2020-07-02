@@ -78,6 +78,7 @@
                     <Label
                         Text="Upgrade 2020- Xamarin Edition"
                         TextColor="White" />
+                    <Button Text="To Learn Xamarin, Press here" Clicked="Button_Web"  FontAttributes="Bold" TextColor="White" CornerRadius="20" BackgroundColor="Orange"/>
                 </StackLayout>
 
             </Frame>
